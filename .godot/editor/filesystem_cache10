@@ -1,18 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746597629
+::res://::1746598805
 bullet.gd::GDScript/GDScript::8200204705419554932::1746420793::0::1::::<>Area2D<><>0<>0<><>::
-bullet.tscn::PackedScene/PackedScene::216892250784874579::1746431216::0::1::::<><><>0<>0<><>::uid://dftkbqwsfd68r::::res://pistol/projectile.png<>uid://do3if5qvigt7y::::res://bullet.gd
-default_bus_layout.tres::AudioBusLayout/AudioBusLayout::6564268947468103023::1746237884::0::1::::<><><>0<>0<><>::
+bullet.tscn::PackedScene/PackedScene::216892250784874579::1746598793::0::1::::<><><>0<>0<><>::uid://do3if5qvigt7y::::res://bullet.gd<>uid://dftkbqwsfd68r::::res://pistol/projectile.png
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::6564268947468103023::1746598708::0::1::::<><><>0<>0<><>::
 gun.gd::GDScript/GDScript::6012546847548221081::1746420340::0::1::::<>Area2D<><>0<>0<><>::
-gun.tscn::PackedScene/PackedScene::4763553689595667017::1746423966::0::1::::<><><>0<>0<><>::uid://crwr1d71q3bk8::::res://gun.gd<>uid://cswb5do8rrj7q::::res://pistol/pistol.png
-icon.png::CompressedTexture2D/CompressedTexture2D::621515402784007901::1746237884::1746237972::1::::<><><>0<>0<>130257868ffab54ab02a8c8a0dce8413<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
-mob.gd::GDScript/GDScript::3916399505945213164::1746421458::0::1::::<>CharacterBody2D<><>0<>0<><>::
-mob.tscn::PackedScene/PackedScene::2334858653056891846::1746423966::0::1::::<><><>0<>0<><>::uid://ogik4s70pgwl::::res://characters/slime/slime.tscn<>uid://bv2er68set813::::res://mob.gd
-pine_tree.tscn::PackedScene/PackedScene::3973289031040934195::1746423966::0::1::::<><><>0<>0<><>::uid://b7rhtttevhxtj::::res://characters/ground_shadow.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
-player.gd::GDScript/GDScript::4005173300585007264::1746430921::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene/PackedScene::50458478383074791::1746423966::0::1::::<><><>0<>0<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>uid://bxcevbxajcnw7::::res://player.gd<>uid://b84rbeq78nmir::::res://gun.tscn
-survivors_game.gd::GDScript/GDScript::7756523727271940297::1746430830::0::1::::<>Node2D<><>0<>0<><>::
-survivors_game.tscn::PackedScene/PackedScene::8939443400899936924::1746431206::0::1::::<><><>0<>0<><>::uid://dirk2vkkkd28d::::res://survivors_game.gd<>uid://ypbquhjma52::::res://player.tscn<>uid://bwuxqwisc40tb::::res://pine_tree.tscn
+icon.png::CompressedTexture2D/CompressedTexture2D::621515402784007901::1746237884::1746598708::1::::<><><>0<>0<>130257868ffab54ab02a8c8a0dce8413<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+mob.gd::GDScript/GDScript::-1::1746421458::0::1::::<>CharacterBody2D<><>0<>0<><>::
+mob.tscn::PackedScene/PackedScene::2334858653056891846::1746598708::0::1::::<><><>0<>0<><>::uid://ogik4s70pgwl::::res://characters/slime/slime.tscn<>uid://bv2er68set813::::res://mob.gd
+pine_tree.tscn::PackedScene/PackedScene::3973289031040934195::1746598708::0::1::::<><><>0<>0<><>::uid://b7rhtttevhxtj::::res://characters/ground_shadow.png<>uid://caqfk2xng5v5u::::res://trees/pine_tree.png
+player.gd::GDScript/GDScript::-1::1746430921::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene/PackedScene::50458478383074791::1746598782::0::1::::<><><>0<>0<><>::uid://pbmyh1qru7p::::res://characters/happy_boo/happy_boo.tscn<>res://player.gd<>uid://b84rbeq78nmir::::res://New folder/gun.tscn
+README.md::TextFile/TextFile::-1::1746598357::0::1::::<><><>0<>0<><>::
+survivors_game.gd::GDScript/GDScript::-1::1746430830::0::1::::<>Node2D<><>0<>0<><>::
+survivors_game.tscn::PackedScene/PackedScene::7073819657715267010::1746598784::0::1::::<><><>0<>0<><>::res://survivors_game.gd<>uid://ypbquhjma52::::res://player.tscn<>res://pine_tree.tscn
 ::res://addons/::1746237884
 ::res://addons/colorpicker_presets/::1746237972
 colorpicker_presets.gd::GDScript/GDScript::6384981073674035872::1746237884::0::1::::<>EditorPlugin<><>0<>1<><>::
@@ -37,6 +37,8 @@ slime_body.png::CompressedTexture2D/CompressedTexture2D::8645940357922743702::17
 slime_body_hurt.png::CompressedTexture2D/CompressedTexture2D::3723476765009385039::1746237884::1746237972::1::::<><><>0<>0<>90f39b7d1869604090f9f1f038fbe1be<>res://.godot/imported/slime_body_hurt.png-3f38b75e5ebee1f99a984b348a7e7f8b.ctex::
 slime_face.png::CompressedTexture2D/CompressedTexture2D::6595643196702037820::1746237884::1746237972::1::::<><><>0<>0<>2f525095401e87cf36bdb3245da3baaa<>res://.godot/imported/slime_face.png-561a1f87b138570340118953f07aab21.ctex::
 slime_hurt_eyes.png::CompressedTexture2D/CompressedTexture2D::4791010527445338927::1746237884::1746237972::1::::<><><>0<>0<>2624b7df9b696472920b5ad04ced31a3<>res://.godot/imported/slime_hurt_eyes.png-711256b4a2a47dcea723d274f00b4628.ctex::
+::res://New folder/::1746598797
+gun.tscn::PackedScene/PackedScene::4763553689595667017::1746598781::0::1::::<><><>0<>0<><>::uid://crwr1d71q3bk8::::res://New folder/gun.gd<>uid://cswb5do8rrj7q::::res://pistol/pistol.png
 ::res://pistol/::1746237972
 pistol.png::CompressedTexture2D/CompressedTexture2D::6081771334990092076::1746237884::1746237972::1::::<><><>0<>0<>2c0e671b071bcf80606b4878d24834b9<>res://.godot/imported/pistol.png-ccb9a9487ce225cdf094ad33c19c2ede.ctex::
 projectile.png::CompressedTexture2D/CompressedTexture2D::7550039277502144023::1746237884::1746237972::1::::<><><>0<>0<>46777fa000de6366a61c2e48f35478b8<>res://.godot/imported/projectile.png-e03ae856d530df914009475206433400.ctex::
