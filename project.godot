@@ -75,9 +75,13 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Infinity Arena"
-run/main_scene="uid://d0mlldylq5nii"
+run/main_scene="uid://c71u1nmkkrxs1"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
+
+[audio]
+
+buses/default_bus_layout="res://assets/default_bus_layout.tres"
 
 [display]
 
