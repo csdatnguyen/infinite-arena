@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c71u1nmkkrxs1"]
 
-[ext_resource type="Script" uid="uid://dirk2vkkkd28d" path="res://scenes/game/survivors_game.gd" id="1_qqaft"]
+[ext_resource type="Script" uid="uid://dirk2vkkkd28d" path="res://scenes/survivors_game/survivors_game.gd" id="1_qqaft"]
 [ext_resource type="PackedScene" uid="uid://ypbquhjma52" path="res://scenes/player/player.tscn" id="1_y3pti"]
 [ext_resource type="PackedScene" uid="uid://bwuxqwisc40tb" path="res://scenes/pine_tree/pine_tree.tscn" id="2_l26od"]
 

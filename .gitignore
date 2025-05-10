@@ -1,8 +1,6 @@
-.import/
-export.cfg
-export_presets.cfg
-.import/
-export.cfg
-export_presets.cfg
+*.uid
+*.tmp
 .godot/
-.uid
+.import/
+export.cfg
+export_presets.cfg
