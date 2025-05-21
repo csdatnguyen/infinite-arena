@@ -1,12 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://ogik4s70pgwl"]
+[gd_scene load_steps=14 format=3 uid="uid://ogik4s70pgwl"]
 
 [ext_resource type="Texture2D" uid="uid://dvgfmy6vtvjji" path="res://assets/characters/slime/slime_body.png" id="1_3j35h"]
 [ext_resource type="Script" uid="uid://b25bt05fvoc08" path="res://assets/characters/slime/slime.gd" id="1_87y5x"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://assets/characters/ground_shadow.png" id="1_cq7ej"]
 [ext_resource type="Texture2D" uid="uid://c078jrp2yvc4s" path="res://assets/characters/slime/slime_face.png" id="2_ygydt"]
+[ext_resource type="Shader" uid="uid://tepk75pjqo15" path="res://assets/characters/slime/slime.gdshader" id="3_lu3un"]
 [ext_resource type="Texture2D" uid="uid://btbxea1f3vwot" path="res://assets/characters/slime/slime_body_hurt.png" id="4_0qu0c"]
 [ext_resource type="Texture2D" uid="uid://cai2ijnbypqtr" path="res://assets/characters/slime/slime_hurt_eyes.png" id="4_hi70h"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wfa1"]
+shader = ExtResource("3_lu3un")
+shader_parameter/flash_amount = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/base_tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 0.0
 
 [sub_resource type="Animation" id="Animation_y4lve"]
 length = 0.001
@@ -225,6 +232,7 @@ texture = ExtResource("1_cq7ej")
 [node name="Anchor" type="Marker2D" parent="."]
 
 [node name="SlimeBody" type="Sprite2D" parent="Anchor"]
+material = SubResource("ShaderMaterial_7wfa1")
 texture = ExtResource("1_3j35h")
 offset = Vector2(0, -36)
 
@@ -242,5 +250,5 @@ texture = ExtResource("2_ygydt")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_j6cum")
+&"": SubResource("AnimationLibrary_j6cum")
 }
