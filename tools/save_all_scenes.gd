@@ -1,17 +1,22 @@
+@tool
 extends EditorScript
 
 func _run():
 	var dir = DirAccess.open("res://")
 	var scene_paths = []
 	_scan_dir(dir, scene_paths)
-	
+
 	for path in scene_paths:
 		print("Saving: ", path)
-		var scene = ResourceLoader.load(path)
-		if scene and scene is PackedScene:
-			ResourceSaver.save(path, scene)
-	
-	print("All .tscn files saved.")
+		var scene_res := ResourceLoader.load(path, "PackedScene")
+		if scene_res and scene_res is PackedScene:
+			var err = ResourceSaver.save(scene_res, path, 0)
+			if err != OK:
+				print("Failed to save: ", path)
+		else:
+			print("Skipped invalid or non-packed scene: ", path)
+
+	print("All valid .tscn scenes saved.")
 
 func _scan_dir(dir: DirAccess, out_paths: Array):
 	dir.list_dir_begin()
