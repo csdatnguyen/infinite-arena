@@ -1,88 +1,96 @@
 extends CharacterBody2D
 
-# Behavioral Pattern: State – manage mob behavior with distinct states
-enum MobState { IDLE, CHASE, DEAD }
-var state: MobState = MobState.IDLE  # Start in idle state
+# === State Pattern: manages mob behavior through interchangeable state objects ===
+# Reference to the current behavior state (Idle, Chase, or Dead)
+var current_state: MobState
 
-# Creational Pattern: Lazy Initialization
-var smoke_scene = null 	# only load when needed
+# Preloaded starting state (Idle)
+const IdleState = preload("res://scenes/mob/MobStates/idle_state.gd")
 
-# Mob's hp and speed
+# === Creational Pattern: Lazy Initialization for smoke effect ===
+# Cache smoke effect only when first needed (used in DeadState)
+var smoke_scene = null
+
+# === Knockback Effect ===
+# Stores velocity applied when hit, gradually decays over time
+var knockback_velocity = Vector2.ZERO
+
+# === Mob Attributes ===
+# Health and movement speed (can be customized by mob type)
 var health = 3
 var speed: float = 200.0
 
-# For handling mobs deaths (MobState.DEAD)
+# Ensure death logic only happens once
 var dead_handled = false
 
+# === Movement Strategy Pattern ===
+# Strategy script that defines how this mob moves
+var movement_strategy: MobMovementStrategy
+var target: Node2D
+
+# === Initialization ===
 # To ensure everything is loaded before getting the player's position
 @onready var player = get_node("/root/Game/Player")
 
-# Duplicate the material to prevent shared flashing across all mobs
+# Duplicate shader material to prevent flash/tint effects from affecting other mobs
 @onready var shader_material: ShaderMaterial = $Slime/Anchor/SlimeBody.material.duplicate()
 
 
 func _ready():
-	# Apply the unique material to this mob instance
+	target = player
+	
+	# Assign unique shader material to this mob instance
 	$Slime/Anchor/SlimeBody.material = shader_material
 	
-	%Slime.play_walk()
+	# Start in IdleState
+	change_state(IdleState.new())
 
 
 func _physics_process(delta):
-	match state:
-		MobState.IDLE:
-			# Do nothing and play idle animation
-			%Slime.play_idle()
-			velocity = Vector2.ZERO
-			move_and_slide()
-
-		MobState.CHASE:
-			# global_position: where something is in the game world
-			var direction = global_position.direction_to(player.global_position)
-			velocity = direction * speed
-			move_and_slide()
-
-		MobState.DEAD:
-			if not dead_handled:
-				dead_handled = true
-				
-				# Load smoke only the first time it's needed
-				var smoke = get_smoke_scene().instantiate()
-				get_parent().add_child(smoke)	# get_parent() add sibling of a mob, smoke does not disappear after queue_free()
-				smoke.global_position = global_position
-				
-				queue_free()
-				
-			# No movement when dead
-			velocity = Vector2.ZERO
-			move_and_slide()
-			
-	# State transition: from IDLE to CHASE when player is nearby
-	if state == MobState.IDLE:
-		var distance_to_player = global_position.distance_to(player.global_position)
-		if distance_to_player < 1000:  # Adjust threshold as needed
-			state = MobState.CHASE
+	# Call the active state's update logic (e.g., Idle, Chase, or Dead behavior)
+	if current_state:
+		current_state.update(self, delta)
+	
+	# Apply knockback effect if active
+	if knockback_velocity.length() > 0.1:
+		position += knockback_velocity * delta
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 800 * delta)	# smooth deceleration
 	
 	
-# Lazy Initialization: loads smoke scene only once when first needed
+# === Lazy Initialization: only load smoke effect the first time it's needed needed ===
 func get_smoke_scene():
 	if smoke_scene == null:
 		smoke_scene = preload("res://assets/smoke_explosion/smoke_explosion.tscn")
 	return smoke_scene
 
 
-# Shader Effect: Flash the mob briefly when taking damage
-func flash():
-	#print("Flashing!")
-	shader_material.set_shader_parameter("flash_amount", 1.0)
-	await get_tree().create_timer(0.1).timeout
-	shader_material.set_shader_parameter("flash_amount", 0.0)
 
-
+# Called when mob takes damage
 func take_damage():
 	health -= 1
-	flash()
+	#flash()
 	%Slime.play_hurt()
 	
-	if health <= 0 and state != MobState.DEAD:
-		state = MobState.DEAD
+	# No need to manually trigger DeadState here — it's now handled within ChaseState
+
+
+# Called when a bullet hits and applies force to the mob
+func apply_knockback(force: Vector2):
+	knockback_velocity = force
+
+
+# === State Pattern: Switch to a new behavior state ===
+func change_state(new_state: MobState):
+	current_state = new_state
+	current_state.enter(self)
+
+
+# === Animation Wrapper Methods ===
+func play_walk_animation():
+	%Slime.play_walk()
+
+func play_idle_animation():
+	%Slime.play_idle()
+
+func play_hurt_animation():
+	%Slime.play_hurt()

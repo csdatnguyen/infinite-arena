@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://pbmyh1qru7p"]
+[gd_scene load_steps=14 format=3 uid="uid://pbmyh1qru7p"]
 
 [ext_resource type="Script" uid="uid://cx7sdxfvyuuol" path="res://assets/characters/happy_boo/happy_boo.gd" id="1_kg7lb"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://assets/characters/ground_shadow.png" id="2_62bos"]
 [ext_resource type="Texture2D" uid="uid://ng8e5ot0dtpd" path="res://assets/characters/happy_boo/square_foot.png" id="3_186qq"]
 [ext_resource type="Texture2D" uid="uid://dhapxq8y8ow57" path="res://assets/characters/happy_boo/square_lower_leg.png" id="4_plnsd"]
 [ext_resource type="Texture2D" uid="uid://qmqpm6asge1i" path="res://assets/characters/happy_boo/square_upper_leg.png" id="5_q2t1e"]
+[ext_resource type="Shader" uid="uid://duydwp071sld7" path="res://scenes/player/player_shader.gdshader" id="6_cgw7o"]
 [ext_resource type="Texture2D" uid="uid://cksiu5gst6fmp" path="res://assets/characters/happy_boo/square_body.png" id="6_w3ck4"]
 [ext_resource type="Texture2D" uid="uid://cvs0lh814pk7h" path="res://assets/characters/happy_boo/square_face.png" id="7_h5h8s"]
 
@@ -580,6 +581,12 @@ _data = {
 &"walk": SubResource("Animation_74kqe")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0h4b"]
+shader = ExtResource("6_cgw7o")
+shader_parameter/flash_amount = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/player_color = Color(1, 0.7, 0.4, 1)
+
 [node name="HappyBoo" type="Node2D"]
 scale = Vector2(0.55, 0.55)
 script = ExtResource("1_kg7lb")
@@ -640,6 +647,7 @@ texture = ExtResource("3_186qq")
 offset = Vector2(-4, 0)
 
 [node name="SquareBody" type="Sprite2D" parent="Colorizer"]
+material = SubResource("ShaderMaterial_g0h4b")
 position = Vector2(-1.73067, -36.6061)
 rotation = -0.0250386
 scale = Vector2(0.9842, 0.990263)
