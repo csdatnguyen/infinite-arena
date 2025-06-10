@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwuxqwisc40tb"]
 
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://assets/characters/ground_shadow.png" id="1_usc5w"]
-[ext_resource type="Shader" uid="uid://bh4xsssv38u13" path="res://scenes/pine_tree/tree_shader.gdshader" id="2_c1u25"]
+[ext_resource type="Shader" uid="uid://byea66ywpww27" path="res://scenes/pine_tree/tree_shader.gdshader" id="2_c1u25"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://assets/trees/pine_tree.png" id="2_ff3rl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c1u25"]

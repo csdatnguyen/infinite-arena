@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b84rbeq78nmir"]
 
-[ext_resource type="Script" uid="uid://crwr1d71q3bk8" path="res://scenes/gun/gun.gd" id="1_dk5gl"]
+[ext_resource type="Script" uid="uid://ebrwotvgwt73" path="res://scenes/gun/gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://assets/pistol/pistol.png" id="1_vk1bi"]
 [ext_resource type="AudioStream" uid="uid://cnui81ae7mehb" path="res://scenes/gun/laser_bullet.wav" id="3_eo2c1"]
 

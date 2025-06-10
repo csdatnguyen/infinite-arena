@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://ogik4s70pgwl"]
 
 [ext_resource type="Texture2D" uid="uid://dvgfmy6vtvjji" path="res://assets/characters/slime/slime_body.png" id="1_3j35h"]
-[ext_resource type="Script" uid="uid://b25bt05fvoc08" path="res://assets/characters/slime/slime.gd" id="1_87y5x"]
+[ext_resource type="Script" uid="uid://dd16csbe6ecpa" path="res://assets/characters/slime/slime.gd" id="1_87y5x"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://assets/characters/ground_shadow.png" id="1_cq7ej"]
 [ext_resource type="Texture2D" uid="uid://c078jrp2yvc4s" path="res://assets/characters/slime/slime_face.png" id="2_ygydt"]
-[ext_resource type="Shader" uid="uid://tepk75pjqo15" path="res://scenes/mob/slime_shader.gdshader" id="3_lu3un"]
+[ext_resource type="Shader" uid="uid://bs0vr8ufalxab" path="res://scenes/mob/slime_shader.gdshader" id="3_lu3un"]
 [ext_resource type="Texture2D" uid="uid://btbxea1f3vwot" path="res://assets/characters/slime/slime_body_hurt.png" id="4_0qu0c"]
 [ext_resource type="Texture2D" uid="uid://cai2ijnbypqtr" path="res://assets/characters/slime/slime_hurt_eyes.png" id="4_hi70h"]
 
