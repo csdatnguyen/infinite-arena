@@ -11,3 +11,12 @@ Top-down rogue-lite game
 5. Press **F5** or click **Play** to run the game.
 
 This will launch Infinite Arena starting from the core game controller scene.
+
+
+## Controls
+
+- **W / A / S / D** – Move
+- **Space** – Dash
+- **U** – Increase attack speed (Power-up simulation)
+- **I** – Increase bullet size (Power-up simulation)
+- **O** – Switch shooting mode (Nearest enemy ↔ Mouse direction)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ypbquhjma52"]
 
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://assets/characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://d3els4pqol0lo" path="res://scenes/player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bxcevbxajcnw7" path="res://scenes/player/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://b84rbeq78nmir" path="res://scenes/gun/gun.tscn" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
